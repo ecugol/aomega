@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Альфа и Омега — Стоматологическая клиника</title>
+    <meta name="description" content="Премиальная стоматологическая клиника Альфа и Омега. Забота о вашей улыбке с первого визита.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Tenor+Sans&family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Grain overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <span class="logo-alpha">&#913;</span>
+                <span class="logo-separator">&</span>
+                <span class="logo-omega">&#937;</span>
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <a href="#about" class="nav-link">О клинике</a>
+                <a href="#services" class="nav-link">Услуги</a>
+                <a href="#team" class="nav-link">Врачи</a>
+                <a href="#testimonials" class="nav-link">Отзывы</a>
+                <a href="#contact" class="nav-link">Контакты</a>
+            </nav>
+            <a href="#contact" class="header-cta">Записаться</a>
+            <button class="burger" id="burger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+            <a href="#about" class="mobile-nav-link">О клинике</a>
+            <a href="#services" class="mobile-nav-link">Услуги</a>
+            <a href="#team" class="mobile-nav-link">Врачи</a>
+            <a href="#testimonials" class="mobile-nav-link">Отзывы</a>
+            <a href="#contact" class="mobile-nav-link">Контакты</a>
+            <a href="tel:+73462330753" class="mobile-nav-phone">+7 (3462) 33-07-53</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-wrapper">
+            <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1920&q=80')"></div>
+            <div class="hero-bg-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge reveal">
+                <span class="badge-line"></span>
+                <span class="badge-text">Стоматология премиум-класса</span>
+                <span class="badge-line"></span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-title-line reveal reveal-delay-1">Альфа</span>
+                <span class="hero-title-ampersand reveal reveal-delay-2">&</span>
+                <span class="hero-title-line reveal reveal-delay-3">Омега</span>
+            </h1>
+            <p class="hero-subtitle reveal reveal-delay-4">
+                От первого визита до безупречной улыбки.<br>
+                Мы заботимся о каждой детали.
+            </p>
+            <div class="hero-actions reveal reveal-delay-5">
+                <a href="#contact" class="btn btn-primary">Записаться на приём</a>
+                <a href="#about" class="btn btn-ghost">Узнать больше</a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>Имплантация</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Ортодонтия</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Эстетическая стоматология</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Хирургия</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Протезирование</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Терапия</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Гигиена</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Детская стоматология</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Имплантация</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Ортодонтия</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Эстетическая стоматология</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Хирургия</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Протезирование</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Терапия</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Гигиена</span>
+                <span class="marquee-dot">&#9671;</span>
+                <span>Детская стоматология</span>
+                <span class="marquee-dot">&#9671;</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-number">01</span>
+                <h2 class="section-title">О клинике</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-image-col reveal-up reveal-delay-1">
+                    <div class="about-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80" alt="Интерьер клиники Альфа и Омега" loading="lazy">
+                        <div class="image-frame"></div>
+                    </div>
+                    <div class="about-stat">
+                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-label">лет опыта</span>
+                    </div>
+                </div>
+                <div class="about-text-col">
+                    <p class="about-lead reveal-up reveal-delay-2">
+                        Клиника <em>«Альфа и Омега»</em> — это пространство, где медицинская
+                        точность встречается с искренней заботой о пациенте.
+                    </p>
+                    <p class="about-body reveal-up reveal-delay-3">
+                        Мы создали клинику, в которой каждая деталь продумана до мелочей:
+                        от современного оборудования ведущих производителей до
+                        атмосферы спокойствия и доверия. Наши врачи — опытные специалисты,
+                        которые постоянно совершенствуют свои навыки.
+                    </p>
+                    <p class="about-body reveal-up reveal-delay-4">
+                        Мы верим, что качественная стоматология начинается с внимательного
+                        отношения к каждому пациенту. Именно поэтому первая консультация
+                        у нас — это всегда неторопливый разговор, а не стремительный осмотр.
+                    </p>
+                    <div class="about-features reveal-up reveal-delay-5">
+                        <div class="feature">
+                            <span class="feature-icon">&#9702;</span>
+                            <span>Оборудование премиум-класса</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">&#9702;</span>
+                            <span>Высокие стандарты качества</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">&#9702;</span>
+                            <span>Индивидуальный подход</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">&#9702;</span>
+                            <span>Гарантия на все работы</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Band -->
+    <section class="philosophy-band">
+        <div class="container">
+            <blockquote class="philosophy-quote reveal-up">
+                <span class="quote-mark">&laquo;</span>
+                Мы не просто лечим зубы — мы возвращаем уверенность в себе
+                <span class="quote-mark">&raquo;</span>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Наши услуги</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="services-grid">
+                <article class="service-card reveal-up reveal-delay-1">
+                    <div class="service-card-inner">
+                        <span class="service-index">I</span>
+                        <h3 class="service-name">Имплантация</h3>
+                        <p class="service-desc">Восстановление зубного ряда с использованием имплантов Straumann, Nobel Biocare. Пожизненная гарантия на импланты.</p>
+                        <div class="service-price">от 45 000 &#8381;</div>
+                        <div class="service-card-line"></div>
+                    </div>
+                </article>
+                <article class="service-card reveal-up reveal-delay-2">
+                    <div class="service-card-inner">
+                        <span class="service-index">II</span>
+                        <h3 class="service-name">Эстетическая стоматология</h3>
+                        <p class="service-desc">Виниры, люминиры, художественная реставрация. Создаём улыбку вашей мечты с безупречным результатом.</p>
+                        <div class="service-price">от 25 000 &#8381;</div>
+                        <div class="service-card-line"></div>
+                    </div>
+                </article>
+                <article class="service-card reveal-up reveal-delay-3">
+                    <div class="service-card-inner">
+                        <span class="service-index">III</span>
+                        <h3 class="service-name">Ортодонтия</h3>
+                        <p class="service-desc">Брекет-системы и элайнеры для идеального прикуса. Работаем с Invisalign и Damon System.</p>
+                        <div class="service-price">от 80 000 &#8381;</div>
+                        <div class="service-card-line"></div>
+                    </div>
+                </article>
+                <article class="service-card reveal-up reveal-delay-4">
+                    <div class="service-card-inner">
+                        <span class="service-index">IV</span>
+                        <h3 class="service-name">Протезирование</h3>
+                        <p class="service-desc">Коронки, мостовидные протезы, съёмные конструкции. Используем диоксид циркония и E-max керамику.</p>
+                        <div class="service-price">от 18 000 &#8381;</div>
+                        <div class="service-card-line"></div>
+                    </div>
+                </article>
+                <article class="service-card reveal-up reveal-delay-5">
+                    <div class="service-card-inner">
+                        <span class="service-index">V</span>
+                        <h3 class="service-name">Хирургия</h3>
+                        <p class="service-desc">Удаление зубов мудрости, костная пластика, синус-лифтинг. Безболезненно и с быстрым восстановлением.</p>
+                        <div class="service-price">от 8 000 &#8381;</div>
+                        <div class="service-card-line"></div>
+                    </div>
+                </article>
+                <article class="service-card reveal-up reveal-delay-6">
+                    <div class="service-card-inner">
+                        <span class="service-index">VI</span>
+                        <h3 class="service-name">Профгигиена</h3>
+                        <p class="service-desc">Ультразвуковая чистка, Air Flow, фторирование. Основа здоровья ваших зубов на долгие годы.</p>
+                        <div class="service-price">от 5 500 &#8381;</div>
+                        <div class="service-card-line"></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Image Break -->
+    <section class="parallax-break">
+        <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1920&q=80')"></div>
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content reveal-up">
+            <div class="parallax-stats">
+                <div class="p-stat">
+                    <span class="p-stat-num" data-count="12000">0</span>
+                    <span class="p-stat-label">Довольных пациентов</span>
+                </div>
+                <div class="p-stat-divider"></div>
+                <div class="p-stat">
+                    <span class="p-stat-num" data-count="8">0</span>
+                    <span class="p-stat-label">Врачей-экспертов</span>
+                </div>
+                <div class="p-stat-divider"></div>
+                <div class="p-stat">
+                    <span class="p-stat-num" data-count="15">0</span>
+                    <span class="p-stat-label">Лет практики</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Наши врачи</h2>
+                <div class="section-line"></div>
+            </div>
+            <p class="team-intro reveal-up reveal-delay-1">
+                Каждый специалист нашей команды — это врач с многолетним опытом,
+                постоянно совершенствующий свою квалификацию и владеющий
+                передовыми методиками лечения.
+            </p>
+            <div class="team-grid">
+                <article class="doctor-card reveal-up reveal-delay-2">
+                    <div class="doctor-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=80" alt="Др. Александр Петров" loading="lazy">
+                        <div class="doctor-overlay">
+                            <p>Стаж: 18 лет<br>Высшая категория</p>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Александр Петров</h3>
+                        <p class="doctor-role">Главный врач, хирург-имплантолог</p>
+                    </div>
+                </article>
+                <article class="doctor-card reveal-up reveal-delay-3">
+                    <div class="doctor-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=500&q=80" alt="Др. Елена Морозова" loading="lazy">
+                        <div class="doctor-overlay">
+                            <p>Стаж: 14 лет<br>Член СтАР</p>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Елена Морозова</h3>
+                        <p class="doctor-role">Стоматолог-ортопед, эстетист</p>
+                    </div>
+                </article>
+                <article class="doctor-card reveal-up reveal-delay-4">
+                    <div class="doctor-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=500&q=80" alt="Др. Дмитрий Волков" loading="lazy">
+                        <div class="doctor-overlay">
+                            <p>Стаж: 12 лет<br>Сертификат Invisalign</p>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Дмитрий Волков</h3>
+                        <p class="doctor-role">Ортодонт</p>
+                    </div>
+                </article>
+                <article class="doctor-card reveal-up reveal-delay-5">
+                    <div class="doctor-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?w=500&q=80" alt="Др. Анна Соколова" loading="lazy">
+                        <div class="doctor-overlay">
+                            <p>Стаж: 10 лет<br>Детская специализация</p>
+                        </div>
+                    </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name">Анна Соколова</h3>
+                        <p class="doctor-role">Детский стоматолог-терапевт</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Отзывы</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="testimonials-carousel">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <div class="testimonial-card reveal-up reveal-delay-1">
+                        <div class="testimonial-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <blockquote class="testimonial-text">
+                            Наконец-то нашла клинику, куда иду без страха. Доктор Петров провёл
+                            имплантацию настолько аккуратно, что я практически ничего не почувствовала.
+                            Результат превзошёл все ожидания.
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <span class="author-name">Мария Козлова</span>
+                            <span class="author-detail">Имплантация, 2025</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal-up reveal-delay-2">
+                        <div class="testimonial-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <blockquote class="testimonial-text">
+                            Делала виниры у Елены Морозовой. Она подошла к процессу как настоящий
+                            художник — учла форму лица, цвет кожи, даже привычную мимику.
+                            Улыбка выглядит абсолютно естественно.
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <span class="author-name">Ольга Северова</span>
+                            <span class="author-detail">Виниры, 2025</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card reveal-up reveal-delay-3">
+                        <div class="testimonial-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <blockquote class="testimonial-text">
+                            Привёл сюда дочку, которая раньше панически боялась стоматологов.
+                            Анна Соколова нашла подход мгновенно — теперь ребёнок сам просится
+                            «к доброму доктору». Бесценно.
+                        </blockquote>
+                        <div class="testimonial-author">
+                            <span class="author-name">Игорь Белов</span>
+                            <span class="author-detail">Детская стоматология, 2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonials-nav">
+                    <button class="t-nav-btn" id="tPrev" aria-label="Предыдущий отзыв">&#8592;</button>
+                    <div class="t-nav-dots" id="tDots">
+                        <span class="t-dot active"></span>
+                        <span class="t-dot"></span>
+                        <span class="t-dot"></span>
+                    </div>
+                    <button class="t-nav-btn" id="tNext" aria-label="Следующий отзыв">&#8594;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Запись на приём</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info-col reveal-up reveal-delay-1">
+                    <p class="contact-lead">
+                        Запишитесь на бесплатную первичную консультацию.
+                        Мы составим индивидуальный план лечения и ответим на все ваши вопросы.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <span class="contact-label">Адрес</span>
+                            <span class="contact-value">ул. Профсоюзов, 16<br>г. Сургут</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Телефон</span>
+                            <a href="tel:+73462330753" class="contact-value contact-link">+7 (3462) 33-07-53</a>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Время работы</span>
+                            <span class="contact-value">Ежедневно: 9:00 — 20:00</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-label">Сайт</span>
+                            <a href="https://aodent.ru" class="contact-value contact-link" target="_blank" rel="noopener">aodent.ru</a>
+                        </div>
+                    </div>
+                    <div class="contact-map reveal-up reveal-delay-3" id="2gisMap">
+                        <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
+                        <script charset="utf-8">new DGWidgetLoader({"width":"100%","height":300,"borderColor":"#a3a3a3","pos":{"lat":61.26869592834372,"lon":73.38219165802003,"zoom":16},"opt":{"city":"surgut"},"org":[{"id":"70000001006419313"}]});</script>
+                        <noscript><a href="https://2gis.ru/surgut/firm/70000001006419313">Посмотреть на карте</a></noscript>
+                    </div>
+                </div>
+                <div class="contact-form-col reveal-up reveal-delay-2">
+                    <form class="appointment-form" id="appointmentForm" novalidate>
+                        <div class="form-group">
+                            <label for="formName" class="form-label">Ваше имя</label>
+                            <input type="text" id="formName" class="form-input" placeholder="Иван Иванов" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="formPhone" class="form-label">Телефон</label>
+                            <input type="tel" id="formPhone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="formService" class="form-label">Интересующая услуга</label>
+                            <select id="formService" class="form-input form-select">
+                                <option value="">Выберите услугу</option>
+                                <option value="consultation">Первичная консультация</option>
+                                <option value="implants">Имплантация</option>
+                                <option value="aesthetics">Эстетическая стоматология</option>
+                                <option value="orthodontics">Ортодонтия</option>
+                                <option value="prosthetics">Протезирование</option>
+                                <option value="surgery">Хирургия</option>
+                                <option value="hygiene">Профгигиена</option>
+                                <option value="children">Детская стоматология</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="formMessage" class="form-label">Сообщение <span class="form-optional">(необязательно)</span></label>
+                            <textarea id="formMessage" class="form-input form-textarea" placeholder="Опишите вашу ситуацию или задайте вопрос" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Отправить заявку</span>
+                            <span class="btn-arrow">&#8594;</span>
+                        </button>
+                        <p class="form-notice">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-alpha">&#913;</span>
+                        <span class="logo-separator">&</span>
+                        <span class="logo-omega">&#937;</span>
+                    </div>
+                    <p class="footer-tagline">Стоматологическая клиника<br>премиум-класса</p>
+                </div>
+                <div class="footer-links-grid">
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Навигация</h4>
+                        <a href="#about">О клинике</a>
+                        <a href="#services">Услуги</a>
+                        <a href="#team">Врачи</a>
+                        <a href="#contact">Контакты</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Услуги</h4>
+                        <a href="#services">Имплантация</a>
+                        <a href="#services">Ортодонтия</a>
+                        <a href="#services">Протезирование</a>
+                        <a href="#services">Профгигиена</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-heading">Контакты</h4>
+                        <a href="tel:+73462330753">+7 (3462) 33-07-53</a>
+                        <a href="https://aodent.ru" target="_blank" rel="noopener">aodent.ru</a>
+                        <span>г. Сургут, ул. Профсоюзов, 16</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Альфа и Омега. Все права защищены.</p>
+                <p>Лицензия &#8470; ЛО-77-01-020145</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Наверх">
+        <span>&#8593;</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
