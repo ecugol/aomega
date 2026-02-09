@@ -387,6 +387,116 @@
     }
 
     // ============================================
+    // BEFORE/AFTER SLIDERS
+    // ============================================
+    function initBeforeAfterSliders() {
+        const sliders = document.querySelectorAll('.case-slider');
+
+        sliders.forEach(slider => {
+            const container = slider.querySelector('.slider-container');
+            const beforeWrapper = slider.querySelector('.slider-before-wrapper');
+            const beforeImg = slider.querySelector('.slider-before');
+            const handle = slider.querySelector('.slider-handle');
+            let isDragging = false;
+
+            function syncBeforeImgWidth() {
+                beforeImg.style.width = container.offsetWidth + 'px';
+            }
+
+            function updateSlider(x) {
+                const rect = container.getBoundingClientRect();
+                let pos = (x - rect.left) / rect.width;
+                pos = Math.max(0.05, Math.min(0.95, pos));
+                beforeWrapper.style.width = (pos * 100) + '%';
+                handle.style.left = (pos * 100) + '%';
+            }
+
+            // Set before image to full container width so it clips, not scales
+            syncBeforeImgWidth();
+            window.addEventListener('resize', syncBeforeImgWidth);
+
+            // Mouse events
+            container.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                updateSlider(e.clientX);
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                updateSlider(e.clientX);
+            });
+
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            // Touch events
+            container.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                updateSlider(e.touches[0].clientX);
+            }, { passive: true });
+
+            container.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                updateSlider(e.touches[0].clientX);
+                e.preventDefault();
+            }, { passive: false });
+
+            container.addEventListener('touchend', () => {
+                isDragging = false;
+            }, { passive: true });
+        });
+    }
+
+    // ============================================
+    // CASES CAROUSEL
+    // ============================================
+    function initCasesCarousel() {
+        const track = document.getElementById('casesTrack');
+        const prevBtn = document.getElementById('casesPrev');
+        const nextBtn = document.getElementById('casesNext');
+        const currentNum = document.getElementById('casesCurrentNum');
+        const totalNum = document.getElementById('casesTotalNum');
+
+        if (!track) return;
+
+        const slides = track.querySelectorAll('.case-slide');
+        const total = slides.length;
+        let current = 0;
+
+        totalNum.textContent = total;
+
+        function goTo(index) {
+            current = index;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            currentNum.textContent = current + 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            goTo(current === 0 ? total - 1 : current - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            goTo(current === total - 1 ? 0 : current + 1);
+        });
+
+        // Swipe support
+        let touchStartX = 0;
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        track.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) goTo(current === total - 1 ? 0 : current + 1);
+                else goTo(current === 0 ? total - 1 : current - 1);
+            }
+        }, { passive: true });
+    }
+
+    // ============================================
     // INIT
     // ============================================
     function init() {
@@ -395,6 +505,8 @@
         createCounterObserver();
         initMobileMenu();
         initTestimonials();
+        initBeforeAfterSliders();
+        initCasesCarousel();
         initSmoothScroll();
         initBackToTop();
         initForm();
