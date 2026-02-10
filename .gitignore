@@ -1,0 +1,6 @@
+_pagefind/
+.claude/
+.playwright-mcp/
+*.png
+v2/
+v3-*

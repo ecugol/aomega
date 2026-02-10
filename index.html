@@ -17,92 +17,10 @@
     <!-- Grain overlay -->
     <div class="grain-overlay" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <header class="site-header" id="siteHeader">
-        <div class="header-inner">
-            <a href="#" class="logo">
-                <span class="logo-alpha">&#913;</span>
-                <span class="logo-separator">&</span>
-                <span class="logo-omega">&#937;</span>
-            </a>
-            <nav class="main-nav" id="mainNav">
-                <a href="#about" class="nav-link">О клинике</a>
-                <a href="#services" class="nav-link">Услуги</a>
-                <a href="#cases" class="nav-link">Работы</a>
-                <a href="#team" class="nav-link">Врачи</a>
-                <a href="#contact" class="nav-link">Контакты</a>
-            </nav>
-            <a href="#contact" class="header-cta">Записаться</a>
-            <button class="a11y-toggle" id="a11yToggle" aria-label="Версия для слабовидящих" aria-expanded="false" title="Версия для слабовидящих">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                    <circle cx="12" cy="12" r="3"/>
-                </svg>
-            </button>
-            <button class="burger" id="burger" aria-label="Открыть меню">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-
-    <!-- Accessibility Panel -->
-    <div class="a11y-panel" id="a11yPanel" role="region" aria-label="Настройки доступности" hidden>
-        <div class="a11y-panel-inner">
-            <div class="a11y-group">
-                <span class="a11y-label">Размер шрифта</span>
-                <div class="a11y-options">
-                    <button class="a11y-btn" data-setting="fontSize" data-value="normal" aria-label="Обычный размер шрифта">А</button>
-                    <button class="a11y-btn" data-setting="fontSize" data-value="large" aria-label="Увеличенный размер шрифта">А+</button>
-                    <button class="a11y-btn" data-setting="fontSize" data-value="xlarge" aria-label="Крупный размер шрифта">А++</button>
-                </div>
-            </div>
-            <div class="a11y-group">
-                <span class="a11y-label">Цветовая схема</span>
-                <div class="a11y-options">
-                    <button class="a11y-btn a11y-swatch a11y-swatch-normal" data-setting="colorScheme" data-value="normal" aria-label="Обычные цвета">Ц</button>
-                    <button class="a11y-btn a11y-swatch a11y-swatch-bw" data-setting="colorScheme" data-value="bw" aria-label="Чёрный на белом">Ч/Б</button>
-                    <button class="a11y-btn a11y-swatch a11y-swatch-wb" data-setting="colorScheme" data-value="wb" aria-label="Белый на чёрном">Б/Ч</button>
-                    <button class="a11y-btn a11y-swatch a11y-swatch-blue" data-setting="colorScheme" data-value="blue" aria-label="Синяя схема">С</button>
-                    <button class="a11y-btn a11y-swatch a11y-swatch-beige" data-setting="colorScheme" data-value="beige" aria-label="Бежевая схема">Б</button>
-                </div>
-            </div>
-            <div class="a11y-group">
-                <span class="a11y-label">Межбуквенный интервал</span>
-                <div class="a11y-options">
-                    <button class="a11y-btn" data-setting="letterSpacing" data-value="normal" aria-label="Обычный интервал">Аа</button>
-                    <button class="a11y-btn" data-setting="letterSpacing" data-value="medium" aria-label="Средний интервал">А а</button>
-                    <button class="a11y-btn" data-setting="letterSpacing" data-value="wide" aria-label="Широкий интервал">А&nbsp; а</button>
-                </div>
-            </div>
-            <div class="a11y-group">
-                <span class="a11y-label">Изображения</span>
-                <div class="a11y-options">
-                    <button class="a11y-btn" data-setting="images" data-value="show" aria-label="Показать изображения">Вкл</button>
-                    <button class="a11y-btn" data-setting="images" data-value="hide" aria-label="Скрыть изображения">Выкл</button>
-                </div>
-            </div>
-            <div class="a11y-group a11y-group-reset">
-                <button class="a11y-btn a11y-reset-btn" id="a11yReset" aria-label="Сбросить настройки доступности">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
-                    Сбросить
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <nav class="mobile-nav">
-            <a href="#about" class="mobile-nav-link">О клинике</a>
-            <a href="#services" class="mobile-nav-link">Услуги</a>
-            <a href="#cases" class="mobile-nav-link">Работы</a>
-            <a href="#team" class="mobile-nav-link">Врачи</a>
-            <a href="#contact" class="mobile-nav-link">Контакты</a>
-            <a href="tel:+73462330753" class="mobile-nav-phone">+7 (3462) 33-07-53</a>
-        </nav>
-    </div>
+    <!-- Shared components (injected by components.js) -->
+    <div id="site-header-mount"></div>
+    <div id="site-a11y-mount"></div>
+    <div id="site-mobile-menu-mount"></div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -176,7 +94,7 @@
     </div>
 
     <!-- About Section -->
-    <section class="about-section" id="about">
+    <section class="about-section" id="about" data-pagefind-body>
         <div class="container">
             <div class="section-header reveal-up">
                 <span class="section-number">01</span>
@@ -245,7 +163,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services-section" id="services">
+    <section class="services-section" id="services" data-pagefind-body>
         <div class="container">
             <div class="section-header reveal-up">
                 <span class="section-number">02</span>
@@ -312,7 +230,7 @@
     </section>
 
     <!-- Cases / Before-After Section -->
-    <section class="cases-section" id="cases">
+    <section class="cases-section" id="cases" data-pagefind-body>
         <div class="container">
             <div class="section-header reveal-up">
                 <span class="section-number">03</span>
@@ -535,7 +453,7 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team-section" id="team">
+    <section class="team-section" id="team" data-pagefind-body>
         <div class="container">
             <div class="section-header reveal-up">
                 <span class="section-number">04</span>
@@ -601,7 +519,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
+    <section class="testimonials-section" id="testimonials" data-pagefind-body>
         <div class="container">
             <div class="section-header reveal-up">
                 <span class="section-number">05</span>
@@ -661,7 +579,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact-section" id="contact">
+    <section class="contact-section" id="contact" data-pagefind-body>
         <div class="container">
             <div class="section-header reveal-up">
                 <span class="section-number">06</span>
@@ -730,60 +648,18 @@
                             <span class="btn-text">Отправить заявку</span>
                             <span class="btn-arrow">&#8594;</span>
                         </button>
-                        <p class="form-notice">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных</p>
+                        <p class="form-notice">Нажимая кнопку, вы соглашаетесь с <a href="/patients/" style="color:var(--color-gold);border-bottom:1px solid var(--color-gold-muted)">политикой обработки персональных данных</a></p>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <span class="logo-alpha">&#913;</span>
-                        <span class="logo-separator">&</span>
-                        <span class="logo-omega">&#937;</span>
-                    </div>
-                    <p class="footer-tagline">Стоматологическая клиника<br>премиум-класса</p>
-                </div>
-                <div class="footer-links-grid">
-                    <div class="footer-col">
-                        <h4 class="footer-heading">Навигация</h4>
-                        <a href="#about">О клинике</a>
-                        <a href="#services">Услуги</a>
-                        <a href="#team">Врачи</a>
-                        <a href="#contact">Контакты</a>
-                    </div>
-                    <div class="footer-col">
-                        <h4 class="footer-heading">Услуги</h4>
-                        <a href="#services">Имплантация</a>
-                        <a href="#services">Ортодонтия</a>
-                        <a href="#services">Протезирование</a>
-                        <a href="#services">Профгигиена</a>
-                    </div>
-                    <div class="footer-col">
-                        <h4 class="footer-heading">Контакты</h4>
-                        <a href="tel:+73462330753">+7 (3462) 33-07-53</a>
-                        <a href="https://aodent.ru" target="_blank" rel="noopener">aodent.ru</a>
-                        <span>г. Сургут, ул. Профсоюзов, 16</span>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Альфа и Омега. Все права защищены.</p>
-                <p>Лицензия &#8470; ЛО-77-01-020145</p>
-            </div>
-        </div>
-    </footer>
+    <!-- Shared components (injected by components.js) -->
+    <div id="site-footer-mount"></div>
+    <div id="site-back-to-top-mount"></div>
 
-    <!-- Back to top -->
-    <button class="back-to-top" id="backToTop" aria-label="Наверх">
-        <span>&#8593;</span>
-    </button>
-
+    <script src="components.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
