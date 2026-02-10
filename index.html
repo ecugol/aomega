@@ -33,6 +33,12 @@
                 <a href="#contact" class="nav-link">Контакты</a>
             </nav>
             <a href="#contact" class="header-cta">Записаться</a>
+            <button class="a11y-toggle" id="a11yToggle" aria-label="Версия для слабовидящих" aria-expanded="false" title="Версия для слабовидящих">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+            </button>
             <button class="burger" id="burger" aria-label="Открыть меню">
                 <span></span>
                 <span></span>
@@ -40,6 +46,51 @@
             </button>
         </div>
     </header>
+
+    <!-- Accessibility Panel -->
+    <div class="a11y-panel" id="a11yPanel" role="region" aria-label="Настройки доступности" hidden>
+        <div class="a11y-panel-inner">
+            <div class="a11y-group">
+                <span class="a11y-label">Размер шрифта</span>
+                <div class="a11y-options">
+                    <button class="a11y-btn" data-setting="fontSize" data-value="normal" aria-label="Обычный размер шрифта">А</button>
+                    <button class="a11y-btn" data-setting="fontSize" data-value="large" aria-label="Увеличенный размер шрифта">А+</button>
+                    <button class="a11y-btn" data-setting="fontSize" data-value="xlarge" aria-label="Крупный размер шрифта">А++</button>
+                </div>
+            </div>
+            <div class="a11y-group">
+                <span class="a11y-label">Цветовая схема</span>
+                <div class="a11y-options">
+                    <button class="a11y-btn a11y-swatch a11y-swatch-normal" data-setting="colorScheme" data-value="normal" aria-label="Обычные цвета">Ц</button>
+                    <button class="a11y-btn a11y-swatch a11y-swatch-bw" data-setting="colorScheme" data-value="bw" aria-label="Чёрный на белом">Ч/Б</button>
+                    <button class="a11y-btn a11y-swatch a11y-swatch-wb" data-setting="colorScheme" data-value="wb" aria-label="Белый на чёрном">Б/Ч</button>
+                    <button class="a11y-btn a11y-swatch a11y-swatch-blue" data-setting="colorScheme" data-value="blue" aria-label="Синяя схема">С</button>
+                    <button class="a11y-btn a11y-swatch a11y-swatch-beige" data-setting="colorScheme" data-value="beige" aria-label="Бежевая схема">Б</button>
+                </div>
+            </div>
+            <div class="a11y-group">
+                <span class="a11y-label">Межбуквенный интервал</span>
+                <div class="a11y-options">
+                    <button class="a11y-btn" data-setting="letterSpacing" data-value="normal" aria-label="Обычный интервал">Аа</button>
+                    <button class="a11y-btn" data-setting="letterSpacing" data-value="medium" aria-label="Средний интервал">А а</button>
+                    <button class="a11y-btn" data-setting="letterSpacing" data-value="wide" aria-label="Широкий интервал">А&nbsp; а</button>
+                </div>
+            </div>
+            <div class="a11y-group">
+                <span class="a11y-label">Изображения</span>
+                <div class="a11y-options">
+                    <button class="a11y-btn" data-setting="images" data-value="show" aria-label="Показать изображения">Вкл</button>
+                    <button class="a11y-btn" data-setting="images" data-value="hide" aria-label="Скрыть изображения">Выкл</button>
+                </div>
+            </div>
+            <div class="a11y-group a11y-group-reset">
+                <button class="a11y-btn a11y-reset-btn" id="a11yReset" aria-label="Сбросить настройки доступности">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                    Сбросить
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu">

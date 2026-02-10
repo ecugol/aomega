@@ -497,9 +497,144 @@
     }
 
     // ============================================
+    // ACCESSIBILITY MODE
+    // ============================================
+    function initAccessibilityMode() {
+        const toggle = document.getElementById('a11yToggle');
+        const panel = document.getElementById('a11yPanel');
+        const resetBtn = document.getElementById('a11yReset');
+        const root = document.documentElement;
+
+        if (!toggle || !panel) return;
+
+        const STORAGE_KEY = 'aomega_a11y_settings';
+        const DEFAULTS = {
+            fontSize: 'normal',
+            colorScheme: 'normal',
+            letterSpacing: 'normal',
+            images: 'show'
+        };
+
+        let settings = Object.assign({}, DEFAULTS);
+
+        // Load saved settings
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                settings = Object.assign({}, DEFAULTS, JSON.parse(saved));
+            }
+        } catch (e) { /* ignore */ }
+
+        function saveSettings() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+            } catch (e) { /* ignore */ }
+        }
+
+        function applySettings() {
+            // Font size
+            root.classList.remove('a11y-size-large', 'a11y-size-xlarge');
+            if (settings.fontSize === 'large') root.classList.add('a11y-size-large');
+            if (settings.fontSize === 'xlarge') root.classList.add('a11y-size-xlarge');
+
+            // Color scheme
+            root.classList.remove('a11y-scheme-bw', 'a11y-scheme-wb', 'a11y-scheme-blue', 'a11y-scheme-beige');
+            if (settings.colorScheme !== 'normal') {
+                root.classList.add('a11y-scheme-' + settings.colorScheme);
+            }
+
+            // Letter spacing
+            root.classList.remove('a11y-spacing-medium', 'a11y-spacing-wide');
+            if (settings.letterSpacing === 'medium') root.classList.add('a11y-spacing-medium');
+            if (settings.letterSpacing === 'wide') root.classList.add('a11y-spacing-wide');
+
+            // Images
+            root.classList.remove('a11y-images-hidden');
+            if (settings.images === 'hide') root.classList.add('a11y-images-hidden');
+
+            updateActiveButtons();
+        }
+
+        function updateActiveButtons() {
+            panel.querySelectorAll('.a11y-btn[data-setting]').forEach(function (btn) {
+                var setting = btn.getAttribute('data-setting');
+                var value = btn.getAttribute('data-value');
+                btn.classList.toggle('a11y-active', settings[setting] === value);
+            });
+        }
+
+        // Panel toggle
+        function openPanel() {
+            panel.hidden = false;
+            // Force reflow for transition
+            panel.offsetHeight;
+            panel.classList.add('a11y-panel-open');
+            toggle.setAttribute('aria-expanded', 'true');
+        }
+
+        function closePanel() {
+            panel.classList.remove('a11y-panel-open');
+            toggle.setAttribute('aria-expanded', 'false');
+            panel.addEventListener('transitionend', function handler() {
+                if (!panel.classList.contains('a11y-panel-open')) {
+                    panel.hidden = true;
+                }
+                panel.removeEventListener('transitionend', handler);
+            });
+        }
+
+        toggle.addEventListener('click', function () {
+            if (panel.classList.contains('a11y-panel-open')) {
+                closePanel();
+            } else {
+                openPanel();
+            }
+        });
+
+        // Outside click
+        document.addEventListener('click', function (e) {
+            if (panel.classList.contains('a11y-panel-open') &&
+                !panel.contains(e.target) &&
+                !toggle.contains(e.target)) {
+                closePanel();
+            }
+        });
+
+        // Escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && panel.classList.contains('a11y-panel-open')) {
+                closePanel();
+                toggle.focus();
+            }
+        });
+
+        // Setting buttons
+        panel.addEventListener('click', function (e) {
+            var btn = e.target.closest('.a11y-btn[data-setting]');
+            if (!btn) return;
+            var setting = btn.getAttribute('data-setting');
+            var value = btn.getAttribute('data-value');
+            settings[setting] = value;
+            saveSettings();
+            applySettings();
+        });
+
+        // Reset
+        resetBtn.addEventListener('click', function () {
+            settings = Object.assign({}, DEFAULTS);
+            saveSettings();
+            applySettings();
+        });
+
+        // Apply on load
+        applySettings();
+    }
+
+    // ============================================
     // INIT
     // ============================================
     function init() {
+        initAccessibilityMode();
         initHeroEntrance();
         createRevealObserver();
         createCounterObserver();
