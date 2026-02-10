@@ -713,6 +713,275 @@ h1, h2, h3 {
 }
 
 /* ============================================
+   CLINIC GALLERY SECTION
+   ============================================ */
+.clinic-section {
+    padding: var(--space-3xl) 0;
+    background: var(--color-bg);
+    overflow: hidden;
+}
+
+.clinic-intro {
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    color: var(--color-text-light);
+    max-width: 580px;
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: var(--space-2xl);
+}
+
+.clinic-gallery {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.clinic-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+}
+
+.clinic-cell {
+    position: relative;
+    overflow: hidden;
+}
+
+.clinic-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.clinic-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-out-expo), filter 0.6s ease;
+    will-change: transform;
+}
+
+.clinic-cell:hover .clinic-img-wrap img {
+    transform: scale(1.04);
+}
+
+.clinic-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(26, 17, 10, 0.75) 0%,
+        rgba(26, 17, 10, 0.15) 40%,
+        transparent 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-lg);
+    opacity: 0;
+    transition: opacity 0.5s var(--ease-out-quart);
+}
+
+.clinic-cell:hover .clinic-img-overlay {
+    opacity: 1;
+}
+
+.clinic-img-tag {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-gold-light);
+    margin-bottom: var(--space-xs);
+    transform: translateY(8px);
+    transition: transform 0.5s var(--ease-out-expo) 0.05s;
+}
+
+.clinic-cell:hover .clinic-img-tag {
+    transform: translateY(0);
+}
+
+.clinic-img-caption {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: rgba(250, 246, 240, 0.85);
+    line-height: 1.5;
+    max-width: 320px;
+    transform: translateY(12px);
+    transition: transform 0.5s var(--ease-out-expo) 0.1s;
+}
+
+.clinic-cell:hover .clinic-img-caption {
+    transform: translateY(0);
+}
+
+/* Mobile: simple stacked with alternating aspect ratios */
+.clinic-cell .clinic-img-wrap {
+    aspect-ratio: 4 / 3;
+}
+
+.clinic-cell--tall .clinic-img-wrap {
+    aspect-ratio: 3 / 4;
+}
+
+.clinic-cell--hero .clinic-img-wrap {
+    aspect-ratio: 16 / 10;
+}
+
+/* Tablet: 2-column grid */
+@media (min-width: 640px) {
+    .clinic-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+
+    .clinic-cell--hero {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    .clinic-cell--hero .clinic-img-wrap {
+        aspect-ratio: auto;
+        height: 100%;
+    }
+
+    .clinic-cell--tall {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .clinic-cell--tall .clinic-img-wrap {
+        aspect-ratio: auto;
+        height: 100%;
+    }
+
+    .clinic-cell .clinic-img-wrap {
+        aspect-ratio: auto;
+        height: 280px;
+    }
+
+    .clinic-cell--wide {
+        aspect-ratio: auto;
+    }
+
+    .clinic-cell--wide .clinic-img-wrap {
+        height: 320px;
+    }
+}
+
+/* Desktop: asymmetric editorial grid */
+@media (min-width: 960px) {
+    .clinic-gallery {
+        padding: 0 var(--space-xl);
+    }
+
+    .clinic-grid {
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: auto;
+        gap: 6px;
+    }
+
+    /* Row 1: Reception hero (7 cols) + Tall chair (5 cols) */
+    .clinic-cell--hero {
+        grid-column: 1 / 8;
+        grid-row: 1 / 2;
+    }
+
+    .clinic-cell--hero .clinic-img-wrap {
+        height: 480px;
+    }
+
+    .clinic-cell--tall {
+        grid-column: 8 / 13;
+        grid-row: 1 / 2;
+    }
+
+    .clinic-cell--tall .clinic-img-wrap {
+        height: 480px;
+    }
+
+    /* Row 2: Treatment room (6 cols) + Microscope (6 cols) */
+    .clinic-cell:nth-child(3) {
+        grid-column: 1 / 7;
+    }
+
+    .clinic-cell:nth-child(3) .clinic-img-wrap {
+        height: 340px;
+    }
+
+    .clinic-cell:nth-child(4) {
+        grid-column: 7 / 13;
+    }
+
+    .clinic-cell:nth-child(4) .clinic-img-wrap {
+        height: 340px;
+    }
+
+    /* Row 3: Microscope room (7 cols) + Scanner accent (5 cols) */
+    .clinic-cell:nth-child(5) {
+        grid-column: 1 / 8;
+    }
+
+    .clinic-cell:nth-child(5) .clinic-img-wrap {
+        height: 380px;
+    }
+
+    .clinic-cell--accent {
+        grid-column: 8 / 13;
+    }
+
+    .clinic-cell--accent .clinic-img-wrap {
+        height: 380px;
+    }
+
+    /* Row 4: X-ray wide (5 cols) + Chair microscope (7 cols) */
+    .clinic-cell--wide {
+        grid-column: 1 / 6;
+    }
+
+    .clinic-cell--wide .clinic-img-wrap {
+        height: 400px;
+    }
+
+    .clinic-cell:nth-child(8) {
+        grid-column: 6 / 13;
+    }
+
+    .clinic-cell:nth-child(8) .clinic-img-wrap {
+        height: 400px;
+    }
+}
+
+/* Large desktop refinements */
+@media (min-width: 1200px) {
+    .clinic-cell--hero .clinic-img-wrap {
+        height: 540px;
+    }
+
+    .clinic-cell--tall .clinic-img-wrap {
+        height: 540px;
+    }
+
+    .clinic-cell:nth-child(3) .clinic-img-wrap,
+    .clinic-cell:nth-child(4) .clinic-img-wrap {
+        height: 380px;
+    }
+
+    .clinic-cell:nth-child(5) .clinic-img-wrap,
+    .clinic-cell--accent .clinic-img-wrap {
+        height: 420px;
+    }
+
+    .clinic-cell--wide .clinic-img-wrap,
+    .clinic-cell:nth-child(8) .clinic-img-wrap {
+        height: 440px;
+    }
+}
+
+/* ============================================
    SERVICES SECTION
    ============================================ */
 .services-section {
