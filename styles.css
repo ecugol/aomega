@@ -1073,6 +1073,27 @@ h1, h2, h3 {
     opacity: 0.4;
 }
 
+a.service-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.service-more {
+    display: block;
+    margin-top: var(--space-md);
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    transition: color var(--duration-fast);
+}
+
+a.service-card:hover .service-more {
+    color: var(--color-gold);
+}
+
 /* ============================================
    CASES / BEFORE-AFTER SECTION
    ============================================ */
