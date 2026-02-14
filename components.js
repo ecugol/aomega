@@ -143,7 +143,6 @@
                             '<div class="footer-col">' +
                                 '<h4 class="footer-heading">\u0423\u0441\u043B\u0443\u0433\u0438</h4>' +
                                 '<a href="/services/implantation/">\u0418\u043C\u043F\u043B\u0430\u043D\u0442\u0430\u0446\u0438\u044F</a>' +
-                                '<a href="/services/orthodontics/">\u041E\u0440\u0442\u043E\u0434\u043E\u043D\u0442\u0438\u044F</a>' +
                                 '<a href="/services/prosthetics/">\u041F\u0440\u043E\u0442\u0435\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435</a>' +
                                 '<a href="/services/hygiene/">\u041F\u0440\u043E\u0444\u0433\u0438\u0433\u0438\u0435\u043D\u0430</a>' +
                             '</div>' +
