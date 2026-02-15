@@ -1975,7 +1975,7 @@ a.service-card:hover .service-more {
 
     /* Team grid */
     .team-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: var(--space-xl);
     }
 
