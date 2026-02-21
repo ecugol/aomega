@@ -98,7 +98,16 @@
     // ============================================
     // COUNTER ANIMATION
     // ============================================
+    function initDynamicYears() {
+        var year = new Date().getFullYear();
+        document.querySelectorAll('[data-since]').forEach(function (el) {
+            var since = parseInt(el.getAttribute('data-since'), 10);
+            el.setAttribute('data-count', year - since);
+        });
+    }
+
     function createCounterObserver() {
+        initDynamicYears();
         var counters = document.querySelectorAll('[data-count]');
 
         if (!counters.length) return;
